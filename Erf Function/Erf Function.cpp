@@ -17,11 +17,10 @@ int main(void)
 	scanf("%g", &t);
 	printf("x   erf(x) \n");
 	printf("__________ \n");
-	for (x = 0; x <= 2; x = x+t)
+	for (x = 0; x <= 2.1; x = x+t)
 	{
 		finalsum = exp(x*x);
 		printf("%3g   %3g \n", x, finalsum * 2/sqrt(3.1415));
 	}
-
 	return(0);
 }
