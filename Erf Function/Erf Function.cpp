@@ -12,7 +12,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 int main(void)
 {
-	float x, dx, t, dt = .1;
+	float x, dx, t, dt = .01;
 	printf("Plesae enter your increment: ");
 	scanf("%g", &dx);
 	printf("x   erf(x) \n");
@@ -23,7 +23,7 @@ int main(void)
 
 		for (t = 0; t <= x; t += dt)
 		{
-			finalsum += x * exp(-t*t) * 2 / sqrt(3.1415);
+			finalsum += dt * exp(-t*t) * 2 / sqrt(3.1415);
 		}
 
 		printf("%3g   %3g \n", x, finalsum);
