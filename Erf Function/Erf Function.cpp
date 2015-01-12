@@ -12,14 +12,20 @@ int _tmain(int argc, _TCHAR* argv[])
 
 int main(void)
 {
-	float x, t, finalall, finalsum = 0;
+	float x, dx, t, dt = .1;
 	printf("Plesae enter your increment: ");
-	scanf("%g", &t);
+	scanf("%g", &dx);
 	printf("x   erf(x) \n");
 	printf("__________ \n");
-	for (x = 0; x <= 2.1; x = x+t)
+	for (x = 0; x <= 2.1; x += dx)
 	{
-		finalsum += x * exp(-t*t) *  2 / sqrt(3.1415);
+		float finalsum = 0;
+
+		for (t = 0; t <= x; t += dt)
+		{
+			finalsum += x * exp(-t*t) * 2 / sqrt(3.1415);
+		}
+
 		printf("%3g   %3g \n", x, finalsum);
 	}
 	return(0);
